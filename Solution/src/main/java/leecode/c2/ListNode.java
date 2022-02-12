@@ -1,4 +1,4 @@
-package leecode.c1;
+package leecode.c2;
 
 import java.util.Objects;
 
@@ -9,7 +9,7 @@ public class ListNode {
     public ListNode(int val){
         this.val = val;
     }
-    public ListNode(int val,ListNode next){
+    public ListNode(int val, ListNode next){
         this.val = val;
         this.next = next;
     }
@@ -23,16 +23,16 @@ public class ListNode {
         }
         return head;
     }
-    @Override
-    public String toString(){
-        StringBuffer stringBuffer = new StringBuffer();
-        if(!Objects.isNull(next)){
-            stringBuffer.append(val).append("->").append(next);
-        }else{
-            stringBuffer.append(val).append(".");
-        }
-        return stringBuffer.toString();
-    }
+//    @Override
+//    public String toString(){
+//        StringBuffer stringBuffer = new StringBuffer();
+//        if(!Objects.isNull(next)){
+//            stringBuffer.append(val).append("->").append(next);
+//        }else{
+//            stringBuffer.append(val).append(".");
+//        }
+//        return stringBuffer.toString();
+//    }
     @Override
     public boolean equals(Object obj){
         if(obj instanceof ListNode) {
@@ -46,11 +46,11 @@ public class ListNode {
         }
     }
 
-    public static void main(String[] args){
-        int[] num1 = new int[]{2,4,3};
-        ListNode l1 = ListNode.instance(num1);
-        ListNode l2 = ListNode.instance(num1);
-        System.out.println(l1);
-        System.out.println(l1.equals(l2));
-    }
+//    public static void main(String[] args){
+//        int[] num1 = new int[]{2,4,3};
+//        ListNode l1 = ListNode.instance(num1);
+//        ListNode l2 = ListNode.instance(num1);
+//        System.out.println(l1);
+//        System.out.println(l1.equals(l2));
+//    }
 }

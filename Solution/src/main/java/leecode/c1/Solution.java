@@ -42,43 +42,4 @@ public class Solution {
         return new int[]{};
     }
 
-    public ListNode addTwoNumbers(final ListNode l1,final ListNode l2){
-        ListNode resultHead = new ListNode();
-        ListNode insResult = resultHead;
-        ListNode insL1 = l1;
-        ListNode insL2 = l2;
-        //进位存储器
-        int temp = 0;
-        for(int i = 0; i<100;i++){
-            if(Objects.isNull(insL1)&&Objects.isNull(insL2)){
-                if(temp!=0){
-                    //这个地方由于题干中最多是9+9，不会出现太大的进位temp<10，所以这个地方最后不用处理进位
-                    insResult.val = insResult.val+temp;
-                }else {
-                    insResult.next = null;
-                }
-                break;
-            }
-            int temp1 = 0;
-            int temp2 = 0;
-            if(!Objects.isNull(insL1)){
-                temp1 = insL1.val;
-                insL1 = insL1.next;
-            }
-            if(!Objects.isNull(insL2)){
-                temp2 = insL2.val;
-                insL2 = insL2.next;
-            }
-            insResult.val = temp1+ temp2+temp;
-            //进位存储器复位
-            temp = 0;
-            if(insResult.val >=10){
-                temp = insResult.val/10;
-                insResult.val = insResult.val%10;
-            }
-            insResult.next = new ListNode();
-            insResult  = insResult.next;
-        }
-        return resultHead;
-    }
 }
