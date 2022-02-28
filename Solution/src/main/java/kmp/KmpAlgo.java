@@ -1,5 +1,7 @@
 package kmp;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class KmpAlgo {
     public int[] calPartialMatchedTable(String pattern){
         int[] pmt = new int[pattern.length()];
@@ -46,8 +48,17 @@ public class KmpAlgo {
                 return  i-pLength+1;
             }
         }
-
-
         return -1;
+    }
+
+    public static void main(String[] args){
+        String str = "aabaaab";
+        int[] fi = new int[]{0,1,0,1,2,2,3};
+        System.out.println("i\tf(i)\ts[0:f(i)-1]\ts[i-f(i)+1:i]");
+        for(int i = 0;i<fi.length;++i){
+            System.out.println(i+"\t"+ StringUtils.leftPad(String.valueOf(fi[i]),4)+
+                    "\t"+StringUtils.leftPad("s[0:"+(fi[i]-1)+"]",11)+"\t"
+            +StringUtils.leftPad("s["+(i-fi[i]+1)+":"+i+"]",13));
+        }
     }
 }
