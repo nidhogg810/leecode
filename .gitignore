@@ -31,3 +31,5 @@ hs_err_pid*
 **/classes/
 *.iml
 
+*.class
+Solution/target/**/*.class

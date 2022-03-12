@@ -8,17 +8,26 @@ package leecode.c34;
  */
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
-        return new int[]{};
+        int leftans = binarySearch(nums,target,true);
+        int rightans = binarySearch(nums,target,false)-1;
+        if (leftans <= rightans && rightans < nums.length && nums[leftans] == target && nums[rightans] == target) {
+            return new int[]{leftans, rightans};
+        }
+
+        return new int[]{-1,-1};
     }
 
     public int binarySearch(int[] nums,int target,boolean allow){
         int left=0,right = nums.length-1,ans=0;
         while (left<=right){
             int mid = (left+right)/2;
-            if(target<nums[mid]){
+
+            if(nums[mid]>target||(allow&&nums[mid]>=target)){
+                //不断更新ans
+                //直到最后不成立
                 right = mid-1;
                 ans = mid;
-            }else {
+            }else{
                 left = mid+1;
             }
         }
