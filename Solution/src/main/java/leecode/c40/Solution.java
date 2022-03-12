@@ -9,15 +9,13 @@ public class Solution {
 
     }
 
-    public void dfs(int[] candidates, int target, int depth,Deque<Integer> stack,List<List<Integer>> ans){
+    public void dfs(int[] candidates, int target,int idx,Deque<Integer> stack,List<List<Integer>> ans){
         if(target==0){
             ans.add(new ArrayList<>(stack));
             return;
         }
-        if(depth)
-        int i = 0;
-        for(;i<candidates.length;++i){
+        dfs(candidates,target,idx+1,stack,ans);
+        if(t)
 
-        }
     }
 }
