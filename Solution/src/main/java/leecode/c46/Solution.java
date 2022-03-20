@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        ArrayList<Boolean> used = new ArrayList<>() {{
+        ArrayList<Boolean> used = new ArrayList<Boolean>() {{
             for(int k=0;k< nums.length;++k){
                 this.add(false);
             }

@@ -1,6 +1,7 @@
 package leecode.c22;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Solution {
         Set<String>[] cache = new HashSet[10];
@@ -9,7 +10,7 @@ public class Solution {
         String after = ")";
         public List<String> generateParenthesis(int n) {
 
-            return change(n).stream().toList();
+            return new ArrayList<>(change(n));
         }
         private Set<String> change(int n){
             Set<String> tmp = new HashSet<>();
