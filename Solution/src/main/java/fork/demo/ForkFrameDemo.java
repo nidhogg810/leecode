@@ -1,2 +1,4 @@
-package fork.demo;public class ForkFrameDemo {
+package fork.demo;
+
+public class ForkFrameDemo {
 }
